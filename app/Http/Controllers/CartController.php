@@ -18,5 +18,18 @@ class CartController extends Controller
         $product = Product::find(request('productId'));
 
         session()->increment('cart.' . $product->id);
+
+        return redirect(route('cart.show'))->with('status', 'Product added to cart.');
+    }
+
+    public function show()
+    {
+        $cart = session('cart');
+        $products = [];
+        foreach ($cart as $productId => $quantity) {
+            $products[] = ['product' => Product::find($productId), 'quantity' => $quantity];
+        };
+        
+        return view('cart.show', ['products' => $products]);
     }
 }
