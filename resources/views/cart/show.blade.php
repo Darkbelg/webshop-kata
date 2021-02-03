@@ -25,6 +25,9 @@
         </div>
     </div>
 
-    {{-- <form action="{{route('orders.route')}}"></form> --}}
+    <form action="{{route('orders.store')}}" method="post">
+        @csrf
+        <button class="btn btn-primary" type="submit">{{__('afrekenen') }} </button>
+    </form>
 </div>
 @endsection

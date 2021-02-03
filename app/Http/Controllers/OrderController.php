@@ -7,6 +7,10 @@ use Illuminate\Http\Request;
 
 class OrderController extends Controller
 {
+
+    public function __construct() {
+        $this->middleware('auth');
+    }
     /**
      * Display a listing of the resource.
      *
@@ -35,18 +39,29 @@ class OrderController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        //session('cart');
+        $order = Order::create([
+            'user_id' => auth()->id()
+            ]);
+
+            foreach (session('cart') as $key => $value) {
+                $order->products()->attach($key, ['quantity' => $value]);
+            }
+
+            session()->forget('cart');
+            
+            return redirect(route('orders.show',$order->id))->with('status', __('Order succesfily placed'));
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Order  $Order
+     * @param  \App\Models\Order  $order
      * @return \Illuminate\Http\Response
      */
-    public function show(Order $Order)
+    public function show(Order $order)
     {
-        //
+        return view('order.show',['order' => $order, 'products' => $order->products]);
     }
 
     /**
