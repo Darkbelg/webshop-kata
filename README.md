@@ -1,62 +1,45 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
+# Webshop kata
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+Maak een kleine webshop met volgende functionaliteit:
 
-## About Laravel
+- Homepagina waarop 5 producten (naam, prijs, afbeelding) worden weergegeven.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+- Bij het klikken op de knop ‘Toevoegen’ naast het product wordt dit aan een winkelwagentje toegevoegd.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+- Pagina met winkelwagentje
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+- Onderaan het winkelwagentje kun je klikken op ‘Afrekenen’. Indien je geen account hebt kom je op de registratiepagina.
 
-## Learning Laravel
+- Na het afrekenen wordt een mail met de inhoud van het winkelwagentje naar de gebruiker doorgestuurd.
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+- Registratiepagina (naam, voornaam, adresgegevens, email, …)
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+- Na registratie ontvang je een mail met de registratiegegevens.
 
-## Laravel Sponsors
+Opgelet!
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+De webshop moet in 2 talen raadpleegbaar zijn. De vertalingen van alle teksten, producten, … moeten uit de database komen.
 
-### Premium Partners
+De paginameta info moet ook vertaald worden en uit de database komen.
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/)**
-- **[OP.GG](https://op.gg)**
+Technische vereisten:
 
-## Contributing
+- SQLite database
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+- Laravel framework (gebruik blade templating)
 
-## Code of Conduct
+- Minimaal 1 AJAX-call verwerken (bv. Toevoegen aan winkelwagen)
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+- Bootstrap
 
-## Security Vulnerabilities
+- Voor uitvoeren van langer durende taken (e-mail) gebruik je Jobs
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+Tips:
 
-## License
+- Besteed niet te veel aandacht aan de grafische uitwerking.
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+- Houd de werking van de webshop minimaal.
+
+- De mailconfiguratie moet niet werken.
+
+Het ganse project mag doorgestuurd worden in een zip-bestand d.m.v. wetransfer.
