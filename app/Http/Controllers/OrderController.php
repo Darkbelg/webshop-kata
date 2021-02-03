@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\OrderShipped;
 use App\Models\Order;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 
 class OrderController extends Controller
 {
@@ -48,9 +50,11 @@ class OrderController extends Controller
                 $order->products()->attach($key, ['quantity' => $value]);
             }
 
-            session()->forget('cart');
+            // Mail::to($request->user())->send(new OrderShipped($order));
             
-            return redirect(route('orders.show',$order->id))->with('status', __('Order succesfily placed'));
+            session()->forget('cart');
+
+            return redirect(route('orders.show',$order->id))->send('status', __('Order succesfily placed'));
     }
 
     /**

@@ -17,10 +17,10 @@
                 <div class="card-body">
                     <h2 class="card-title">{{ __($product->name) }}</h2>
                     <p class="card-text">{{ $product->price }}<span class="pl-2 bold">Quantity: {{$product->pivot->quantity}}</span></p>
-                    
+
                 </div>
             </div>
-            
+
             @endforeach
         </div>
     </div>
