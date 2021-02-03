@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ProductController;
+use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -16,6 +17,18 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [ProductController::class, 'index']);
+
+Route::get('/greeting/{locale}', function ($locale) {
+    if (! in_array($locale, ['en', 'nl'])) {
+        abort(400);
+    }
+
+    App::setLocale($locale);
+
+    echo __('Products');
+    echo '<hr>';
+    echo __('dutch.products');
+});
 
 Auth::routes();
 

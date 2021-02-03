@@ -400,7 +400,7 @@
 
 <body class="antialiased">
     <div class="container m-auto">
-    <h1>Products</h1>
+    <h1>{{ __('Products') }}</h1>
     <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
     @foreach ($products as $product)
     <div class="card" style="width: 18rem;">
